@@ -7,9 +7,10 @@ import ListChild from './ListChild';
 const ListComponent = ({ search }) => {
     const [loading, setLoading] = useState(false);
     const [movies, setMovies] = useState([]);
+    const [pressed, setPressed] = useState({});
 
-    const renderItem = ({ item }) => (
-        <ListChild item={item} />
+    const renderItem = ({ item, index }) => (
+        <ListChild item={item} index={index} pressed={pressed} setPressed={setPressed} />
     );
 
     useEffect(() => {
@@ -18,8 +19,8 @@ const ListComponent = ({ search }) => {
             setLoading(false);
             setMovies(response);
         }).catch((error) => {
-            setLoading(false);
             console.log(error);
+            setLoading(false);
         });
         return;
     }, [])
