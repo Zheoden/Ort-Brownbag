@@ -14,11 +14,11 @@ export const ListChildStyle = StyleSheet.create({
         marginVertical: 8,
         marginHorizontal: 16,
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     title: {
         fontSize: 32,
-        marginLeft: '1rem'
+        marginLeft: 16
     },
     tinyLogo: {
         width: 50,
